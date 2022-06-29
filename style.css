@@ -148,3 +148,7 @@ h2 {
 	content: "- ";
 	padding-right: 5px;
 };
+
+.clip {
+	margin: 8px;
+}

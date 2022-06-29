@@ -24,7 +24,7 @@ function renderClips(clips) {
 function renderClip(clip) {
 	const path = './videos/'
 	const fileName = clip.video_file
-	const html = '<video width="250" height="250" controls><source src="' 
+	const html = '<video width="250" height="250" controls class="clip"><source src="' 
 		+ fileName
 		+ '" type="video/mp4" /></video>'
 	document.getElementById("clips").innerHTML += html
