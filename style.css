@@ -1,0 +1,150 @@
+html, body {
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	background-color: #222;
+	font-family: "Rockwell", "Helvetica Neue";
+	color: white;
+}
+
+img {
+	border: none;
+}
+
+#header {
+	padding-top: 70px;
+}
+
+#footer {
+	padding: 30px;
+	color: white;
+	font-size: 0.7em;
+	opacity: 0.5;
+}
+
+.page-block {
+	display: block;
+	position: relative;
+	margin: 0px;
+}
+
+.container {
+	display: block;
+	position: relative;
+	margin: auto;
+	max-width: 80ch;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 32px;
+	padding-right: 32px;
+	text-align: center;
+}
+
+.logo {
+	margin: auto;
+	display: block;
+	padding-bottom: 40px;
+}
+
+h1 {
+	display: block;
+	margin: 0px;
+	padding: 16px;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	letter-spacing: 1.5;
+}
+
+h2 {
+	display: block;
+	margin: 0px;
+	padding: 8px;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+.subtitle {
+	display: block;
+	padding: 16px;
+	opacity: 0.6;
+	font-size: 17px;
+	line-height: 1.5;
+}
+
+#message {
+	padding-top: 16px;
+}
+
+#message .container {
+	color: black;
+	background-color: #ff6666;
+	border-radius: 16px;
+}
+
+.download-button {
+	display: block;
+	padding: 16px;
+}
+
+.detail-row {
+	position: relative;
+	display: flex;
+	text-align: left;
+	padding: 16px;
+	line-height: 1.5;
+}
+
+.detail-row:after {
+	content: "";
+	display: block;
+	width: 50px;
+	position: absolute;
+	bottom: 0;
+	height: 1px;
+	background-color: rgba(255, 255, 255, 0.1);
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.detail-row div {
+	text-align: right;
+	padding: 8px;
+}
+
+.detail-row div:first-of-type {
+	flex: 1;
+}
+
+.detail-row div:last-of-type {
+	flex: 4;
+	text-align: left;
+}
+
+.detail-row .footnote {
+	font-size: 0.7em;
+	color: white;
+	opacity: 0.6;
+}
+
+.detail-row ul {
+	display: inline-block;
+ 	text-align: left;
+ 	list-style: none;
+ 	padding: 0px;
+ 	margin: 0px;
+}
+
+.detail-row li {
+	font-size: 0.9em;
+	padding: 0px;
+	padding-left: 1em;
+	text-indent: -1em;
+	opacity: 0.6;
+}
+
+.detail-row li:before { 
+	content: "- ";
+	padding-right: 5px;
+};
