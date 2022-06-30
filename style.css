@@ -26,6 +26,7 @@ img {
 	display: block;
 	position: relative;
 	margin: 0px;
+	margin-bottom: 30px;
 }
 
 .container {
@@ -78,6 +79,10 @@ h2 {
 	width: 300px;
 	margin: 12px;
 	vertical-align: top;
+}
+
+.clip-placeholder {
+	opacity: 0.3;
 }
 
 .clip .video {
@@ -142,6 +147,21 @@ h2 {
 	background-color: #000;
 	display: inline-block;
 	margin: 6px;
+	padding: 12px 20px 6px 20px;
+}
+
+#how-to {
+	background: #000;
+	border-radius: 30px;
+	text-align: left;
+	padding: 40px;
+}
+
+#how-to .button {
+	display: inline-block;
+	text-align: center;
+	background-color: #156e84;
+	border-radius: 20px;
 	padding: 12px 20px 6px 20px;
 }
 
