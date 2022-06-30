@@ -62,5 +62,13 @@
 		"filmer_instagram": "vin_para",
 		"video_file": "08.mp4",
 		"location": "Weil am Rhein, Germany"
+	},
+	{
+		"name": "Ollie",
+		"skater_name": "Lukas W&uuml;rzburger",
+		"skater_instagram": "lukas.wuerzburger",
+		"filmer_instagram": "oli_onboard",
+		"video_file": "09.mp4",
+		"location": "Hasenheide, Berlin, Germany"
 	}
 ]
