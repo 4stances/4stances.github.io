@@ -8,7 +8,13 @@
 		<script type="text/javascript" src="script.js"></script>
 		<script type="text/javascript">
 		<!--
-			loadClips();
+			loadClips(function(clips) {
+				renderClips(clips)
+				renderTricks(clips)
+				renderSkaters(clips)
+				renderFilmers(clips)
+				renderLocations(clips)
+			});
 		// -->
 		</script>
 	</head>
@@ -18,13 +24,37 @@
 				<img src="./images/logo.png" srcset="./images/logo.png, ./images/logo@2x.png 2x" class="logo" alt="4 Stances Logo" />
 				<h1>- 4 STANCES -</h1>
 				<span class="subtitle">
-					...
+Skate tricks in all 4 stances: Regular, Switch, Nollie, Fakie<br/>
+<br/>
+The goal is to mirror Regular and Nollie to Switch and Fakie.<br/>
+That's why Fakie is always the opposite direction. For example:<br/>
+Regular FS 180, Nollie FS 180, Switch FS 180, Fakie BS 180
 				</span>
 			</div>
 		</div>
 		<div class="page-block">
 			<div class="container" id="clips">
 				<h2>Checkout some clips</h2>
+			</div>
+		</div>
+		<div class="page-block">
+			<div class="container" id="tricks">
+				<h2>Tricks</h2>
+			</div>
+		</div>
+		<div class="page-block">
+			<div class="container" id="skaters">
+				<h2>Skaters</h2>
+			</div>
+		</div>
+		<div class="page-block">
+			<div class="container" id="filmers">
+				<h2>Filmers</h2>
+			</div>
+		</div>
+		<div class="page-block">
+			<div class="container" id="locations">
+				<h2>Locations</h2>
 			</div>
 		</div>
 		<div class="page-block" id="footer">

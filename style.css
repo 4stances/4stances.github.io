@@ -32,7 +32,7 @@ img {
 	display: block;
 	position: relative;
 	margin: auto;
-	max-width: 80ch;
+	max-width: 120ch;
 	padding-top: 16px;
 	padding-bottom: 16px;
 	padding-left: 32px;
@@ -73,7 +73,83 @@ h2 {
 	line-height: 1.5;
 }
 
-.clip {
+.clip, .clip-placeholder {
 	display: inline-block;
-	margin: 8px;
+	width: 300px;
+	margin: 12px;
+	vertical-align: top;
+}
+
+.clip .video {
+	background-color: #000;
+	display: block;
+	width: 300px;
+	height: 300px;
+}
+
+.clip .metadata {
+	display: block;
+	padding-top: 12px;
+	font-size: 14px;
+}
+
+.clip .metadata span {
+	display: block;
+	text-align: left;
+	margin: 4px;
+}
+
+.clip .metadata .trick {
+	font-weight: bold;
+	margin-bottom: 12px;
+	font-size: 20px;
+}
+
+.clip .metadata .filmer {
+	color: #ccc;
+}
+
+.clip .metadata .location {
+	color: #999;
+}
+
+#tricks .trick {
+	border-radius: 20px;
+	background-color: #156e84;
+	display: inline-block;
+	margin: 6px;
+	padding: 12px 20px 6px 20px;
+}
+
+#skaters .skater {
+	border-radius: 20px;
+	background-color: #883112;
+	display: inline-block;
+	margin: 6px;
+	padding: 12px 20px 6px 20px;
+}
+
+#filmers .filmer {
+	border-radius: 20px;
+	background-color: #666;
+	display: inline-block;
+	margin: 6px;
+	padding: 12px 20px 6px 20px;
+}
+
+#locations .location {
+	border-radius: 20px;
+	background-color: #000;
+	display: inline-block;
+	margin: 6px;
+	padding: 12px 20px 6px 20px;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
