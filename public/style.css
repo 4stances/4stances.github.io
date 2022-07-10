@@ -1,0 +1,89 @@
+body {
+    margin: 0px;
+    font-family: 'Rockwell', 'Helvetica Neue';
+}
+
+.page-block {
+    display: block;
+    width: 960px;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+#navigation {
+    display: block;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#navigation img {
+    vertical-align: middle;
+}
+
+#navigation a {
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 150px;
+    color: #333;
+    text-decoration: none;
+}
+
+#navigation a:hover {
+    color: #ccc;
+}
+
+.clip {
+    display: inline-block;
+    width: 300px;
+    margin: 10px;
+    vertical-align: top;
+}
+
+.clip-poster img {
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.clip-video video {
+    width: 300px;
+    height: 300px;
+}
+
+.clip-caption {
+    display: block;
+    width: 300px;
+}
+
+.clip-trick {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.clip-skater {
+    display: block;
+    font-size: 14px;
+}
+
+.clip-caption .clip-filmer {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+.clip-caption .clip-location {
+    display: block;
+    font-size: 14px;
+    color: #999;
+}
+
+.page-footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 40px;
+}

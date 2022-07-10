@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "name": "Lukas Würzburger",
+        "instagram": "lukas.wuerzburger"
+    },
+    {
+        "id": 2,
+        "name": "Manuel Schamberger",
+        "instagram": "manuelschamberger"
+    },
+    {
+        "id": 3,
+        "name": "Fynn Koppenbrink",
+        "instagram": "jason_dreamz"
+    },
+    {
+        "id": 4,
+        "name": "Nils Rapp",
+        "instagram": "_schlonzinger_"
+    },
+    {
+        "id": 5,
+        "name": "Timo Urbach",
+        "instagram": "overbergen"
+    },
+    {
+        "id": 6,
+        "name": "Paul Zabel",
+        "instagram": "_who.is.paul"
+    },
+    {
+        "id": 7,
+        "name": null,
+        "instagram": "f66bi"
+    },
+    {
+        "id": 8,
+        "name": "Daniel Becker",
+        "instagram": "dizzy_lfo"
+    },
+    {
+        "id": 9,
+        "name": "Léo Meggle",
+        "instagram": "meggleohmygod"
+    },
+    {
+        "id": 10,
+        "name": null,
+        "instagram": "sbskateshop"
+    },
+    {
+        "id": 11,
+        "name": "Adolfo Podella",
+        "instagram": "adodavid_"
+    },
+    {
+        "id": 12,
+        "name": "Vincenzo Parasiliti",
+        "instagram": "vin_para"
+    },
+    {
+        "id": 13,
+        "name": "Olivia Berger",
+        "instagram": "oli_onboard"
+    },
+    {
+        "id": 14,
+        "name": "Elliott Schwartz",
+        "instagram": "skatebased"
+    },
+    {
+        "id": 15,
+        "name": "Pieter Roesbeke",
+        "instagram": "pieterroesbeke"
+    }
+]

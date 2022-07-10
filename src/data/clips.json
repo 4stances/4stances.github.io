@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"trick": 1,
+		"skater": 2,
+		"filmer": 1,
+		"location": 1
+	},
+	{
+		"id": 2,
+		"trick": 2,
+		"skater": 3,
+		"filmer": 1,
+		"location": 1
+	},
+	{
+		"id": 3,
+		"trick": 3,
+		"skater": 4,
+		"filmer": 1,
+		"location": 1
+	},
+	{
+		"id": 4,
+		"trick": 4,
+		"skater": 5,
+		"filmer": 1,
+		"location": 2
+	},
+	{
+		"id": 5,
+		"trick": 5,
+		"skater": 6,
+		"filmer": 7,
+		"location": 3
+	},
+	{
+		"id": 6,
+		"trick": 3,
+		"skater": 8,
+		"filmer": 1,
+		"location": 1
+	},
+	{
+		"id": 7,
+		"trick": 6,
+		"skater": 9,
+		"filmer": 10,
+		"location": 4
+	},
+	{
+		"id": 8,
+		"trick": 7,
+		"skater": 11,
+		"filmer": 12,
+		"location": 5
+	},
+	{
+		"id": 9,
+		"trick": 2,
+		"skater": 1,
+		"filmer": 13,
+		"location": 6
+	},
+	{
+		"id": 10,
+		"trick": 8,
+		"skater": 14,
+		"filmer": 15,
+		"location": 7
+	}
+]
