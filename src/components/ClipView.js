@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export default function ClipView({ clip }) {
 
-    const alt = clip.name + " by " + clip.skater_name + ", filmed by " + clip.filmer_name
+    const alt = clip.name + " by " + clip.skater.name + ", filmed by " + clip.filmer.name
     const clipsPath = process.env.PUBLIC_URL + "/clips/"
     const poster = clipsPath + clip.id + "/poster.jpg"
     const video = clipsPath + clip.id + "/video.mp4"
@@ -36,10 +36,10 @@ function ClipCanvas({ poster, video, alt }) {
 function ClipCaption({ clip }) {
     return (
         <div className="clip-caption">
-            <span className="clip-trick">{ clip.name }</span>
-            <span className="clip-skater">{ clip.skater_name } ({ clip.skater_instagram })</span>
-            <span className="clip-filmer">{ clip.filmer_name } ({ clip.filmer_instagram })</span>
-            <span className="clip-location">{ clip.location }</span>
+            <span className="clip-trick">{ clip.trick.name }</span>
+            <span className="clip-skater">{ clip.skater.name } (@{ clip.skater.instagram })</span>
+            <span className="clip-filmer">{ clip.filmer.name } (@{ clip.filmer.instagram })</span>
+            <span className="clip-location">{ clip.location.name }</span>
         </div>
     )
 }

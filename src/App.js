@@ -10,17 +10,22 @@ import tricksJSON from './data/tricks.json';
 function App() {
   const [tricks] = useState(
     tricksJSON.filter(trick => clipsJSON.filter(clip => clip.trick === trick.id)[0])
+    .sort((a, b) => a.name > b.name ? 1 : -1)
   )
   const [skaters] = useState(
-    peopleJSON.filter(person => clipsJSON.filter(clip => clip.skater === person.id)[0])
+    peopleJSON
+      .filter(person => clipsJSON.filter(clip => clip.skater === person.id).length > 0)
+      .sort((a, b) => a.name > b.name ? 1 : -1)
   )
   const [filmers] = useState(
-    peopleJSON.filter(person => clipsJSON.filter(clip => clip.filmer === person.id)[0])
+    peopleJSON
+      .filter(person => clipsJSON.filter(clip => clip.filmer === person.id).length > 0)
+      .sort((a, b) => a.name > b.name ? 1 : -1)
   )
   const [locations] = useState(
     locationsJSON.filter(location => clipsJSON.filter(clip => clip.location === location.id)[0])
-  )
-
+    .sort((a, b) => a.name > b.name ? 1 : -1)
+  );
   const [clips] = useState(
     clipsJSON
       .sort((a, b) => { return a.id < b.id ? 1 : -1 })
@@ -34,10 +39,39 @@ function App() {
         }
       })
   )
+  const [filter, setFilter] = useState(null);
+
+  function applyFilter(key, value) {
+    setFilter({
+      key: key, 
+      value: value
+    });
+  }
+
+  let filterObject = null;
+  if (filter != null) {
+    switch (filter.key) {
+      case 'trick':
+        filterObject = tricks.filter(obj => obj.id === filter.value)[0];
+        break;
+      case 'skater':
+        filterObject = skaters.filter(obj => obj.id === filter.value)[0];
+        break;
+      case 'filmer':
+        filterObject = filmers.filter(obj => obj.id === filter.value)[0];
+        break;
+      case 'location':
+        filterObject = locations.filter(obj => obj.id === filter.value)[0];
+        break;
+      default:
+        break;
+    }
+  }
+
   return (
     <>
-      <Menu tricks={ tricks } skaters={ skaters } filmers={ filmers } locations={ locations } />
-      {/* <Feed clips={ clips } /> */}
+      <Menu tricks={ tricks } skaters={ skaters } filmers={ filmers } locations={ locations } filterObject={ filterObject } applyFilter={ applyFilter } />
+      <Feed clips={ clips } filter={ filter } />
       <PageFooter />
     </>
   )

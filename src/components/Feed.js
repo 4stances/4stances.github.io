@@ -1,9 +1,16 @@
 import ClipView from "./ClipView";
 
-export default function Feed({ clips }) {
+export default function Feed({ clips, filter }) {
+    let filteredClips = clips;
+    const params = new URLSearchParams(window.location.search);
+    
+    if (filter != null) {
+        filteredClips = filteredClips.filter(clip => clip[filter.key].id === filter.value);
+    }
+
     return (
         <div className="page-block">
-            <ClipList clips={ clips } />
+            <ClipList clips={ filteredClips } />
         </div>
     )
 }
