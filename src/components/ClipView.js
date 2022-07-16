@@ -1,6 +1,7 @@
 import { useState } from "react"
+import Name from "./Name";
 
-export default function ClipView({ clip }) {
+export default function ClipView({ clip, applyFilter }) {
 
     const alt = clip.name + " by " + clip.skater.name + ", filmed by " + clip.filmer.name
     const clipsPath = process.env.PUBLIC_URL + "/clips/"
@@ -10,7 +11,7 @@ export default function ClipView({ clip }) {
     return (
         <div className="clip">
             <ClipCanvas poster={ poster } video={ video } alt={ alt } />
-            <ClipCaption clip={ clip } />
+            <ClipCaption clip={ clip } applyFilter={ applyFilter }  />
         </div>
     )
 }
@@ -33,13 +34,13 @@ function ClipCanvas({ poster, video, alt }) {
     }
 }
 
-function ClipCaption({ clip }) {
+function ClipCaption({ clip, applyFilter }) {
     return (
         <div className="clip-caption">
-            <span className="clip-trick">{ clip.trick.name }</span>
-            <span className="clip-skater">{ clip.skater.name } (@{ clip.skater.instagram })</span>
-            <span className="clip-filmer">{ clip.filmer.name } (@{ clip.filmer.instagram })</span>
-            <span className="clip-location">{ clip.location.name }</span>
+            <span className="clip-trick"><Name subject={ clip.trick } keyword="trick" path="tricks" applyFilter={ applyFilter } /></span>
+            <span className="clip-skater">by <Name subject={ clip.skater } keyword="skater" path="users" appendix="clips" applyFilter={ applyFilter } /></span>
+            <span className="clip-filmer">filmed by <Name subject={ clip.filmer } keyword="filmer" path="users" appendix="filmed" applyFilter={ applyFilter } /></span>
+            <span className="clip-location">at <Name subject={ clip.location } keyword="location" path="locations" applyFilter={ applyFilter } /></span>
         </div>
     )
 }

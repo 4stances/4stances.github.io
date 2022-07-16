@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Menu({ tricks, skaters, filmers, locations, filterObject, applyFilter }) {
+export default function Menu({ clips, tricks, skaters, filmers, locations, filter, applyFilter }) {
     let [menu, setMenu] = useState(makeState());
 
     function toggleMenu(key) {
@@ -39,6 +39,45 @@ export default function Menu({ tricks, skaters, filmers, locations, filterObject
         setMenu(makeState());
     }
 
+    let selectedFilter = null;
+    if (filter != null) {
+        switch (filter.key) {
+        case 'trick':
+            selectedFilter = selectedFilterObject(clips, tricks, filter.key);
+            break;
+        case 'skater':
+            selectedFilter = selectedFilterObject(clips, skaters, filter.key, null, "instagram");
+            break;
+        case 'filmer':
+            selectedFilter = selectedFilterObject(clips, filmers, filter.key, "Filmed by", "instagram");
+            break;
+        case 'location':
+            selectedFilter = selectedFilterObject(clips, locations, filter.key);
+            break;
+        default:
+            break;
+        }
+    } else {
+        selectedFilter = {
+            title: "4 Stances",
+            count: clips.length
+        };
+    }
+
+    function selectedFilterObject(clips, target, keyword, prefix, fallback) {
+        const object = target.filter(obj => obj.id === filter.value)[0];
+        let title = "";
+        if (prefix != null) {
+          title += prefix + " ";
+        }
+        title += object.name ??= ("@" + object[fallback]);
+        const count = clips.filter(clip => clip[keyword].id === filter.value).length;
+        return {
+            title: title,
+            count: count
+        }
+    }
+
     return (
         <div id="navigation">
             <div className="page-block menu">
@@ -62,9 +101,9 @@ export default function Menu({ tricks, skaters, filmers, locations, filterObject
                 <MenuList items={ tricks } keyword="trick" displayNameFunc={ (i) => i.name } isVisible={ menu['tricks'] } applyFilter={ handleApplyFilter } />
                 <MenuList items={ skaters } keyword="skater" displayNameFunc={ (i) => personName(i) } isVisible={ menu['skaters'] } applyFilter={ handleApplyFilter } />
                 <MenuList items={ filmers } keyword="filmer" displayNameFunc={ (i) => personName(i) } isVisible={ menu['filmers'] } applyFilter={ handleApplyFilter } />
-                <MenuList items={ locations } keyword="location" displayNameFunc={ (i) => i.name } isVisible={ menu['locations'] } applyFilter={ handleApplyFilter } />
+                <MenuList items={ locations } keyword="location" displayNameFunc={ (i) => locationName(i.name) } isVisible={ menu['locations'] } applyFilter={ handleApplyFilter } />
             </div>
-            <SelectedFilter filterObject={ filterObject } />
+            <SelectedFilter selectedFilter={ selectedFilter } />
         </div>      
     )
 }
@@ -90,15 +129,24 @@ function MenuListItem({ item, keyword, displayNameFunc, applyFilter }) {
     )
 }
 
-
 function personName(person) {
-    return person.name ??= "@" + person.instagram
+    let name = person.name
+    return name ??= "@" + person.instagram
 }
 
-function SelectedFilter({ filterObject }) {
-    if (filterObject != null) {
+function locationName(location) {
+    return location.replace(", ", "\n")
+}
+
+function SelectedFilter({ selectedFilter }) {
+    if (selectedFilter != null) {
+        const clipsTitle = selectedFilter.count === 1 ? "clip" : "clips";
+        const countText = selectedFilter.count + " " + clipsTitle;
         return (
-            <div id="active-filter">{ filterObject.name }</div>
+            <div id="active-filter">
+                <span className="title">{ selectedFilter.title }</span>
+                <span className="subtitle">{ countText }</span>
+            </div>
         )
     } else {
         return <></>

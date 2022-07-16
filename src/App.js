@@ -42,36 +42,17 @@ function App() {
   const [filter, setFilter] = useState(null);
 
   function applyFilter(key, value) {
-    setFilter({
+    let filter = {
       key: key, 
       value: value
-    });
-  }
-
-  let filterObject = null;
-  if (filter != null) {
-    switch (filter.key) {
-      case 'trick':
-        filterObject = tricks.filter(obj => obj.id === filter.value)[0];
-        break;
-      case 'skater':
-        filterObject = skaters.filter(obj => obj.id === filter.value)[0];
-        break;
-      case 'filmer':
-        filterObject = filmers.filter(obj => obj.id === filter.value)[0];
-        break;
-      case 'location':
-        filterObject = locations.filter(obj => obj.id === filter.value)[0];
-        break;
-      default:
-        break;
-    }
+    };
+    setFilter(filter);
   }
 
   return (
     <>
-      <Menu tricks={ tricks } skaters={ skaters } filmers={ filmers } locations={ locations } filterObject={ filterObject } applyFilter={ applyFilter } />
-      <Feed clips={ clips } filter={ filter } />
+      <Menu clips={ clips } tricks={ tricks } skaters={ skaters } filmers={ filmers } locations={ locations } filter={ filter } applyFilter={ applyFilter } />
+      <Feed clips={ clips } filter={ filter } applyFilter={ applyFilter }  />
       <PageFooter />
     </>
   )

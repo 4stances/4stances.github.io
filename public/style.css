@@ -43,13 +43,21 @@ body {
 }
 
 #navigation .submenu .submenu-list {
+    display: block;
     list-style-type: none;
     padding: 0px;
+    text-align: left;
+}
+
+#navigation .submenu .submenu-list li {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #navigation .submenu .submenu-list li a {
+    white-space: pre-line;
     display: inline-block;
-    width: auto;
+    width: 290px;
     color: #ccc;
     text-decoration: none;
     font-size: 14px;
@@ -62,11 +70,31 @@ body {
 }
 
 #active-filter {
+    margin: 20px;
+}
+
+#active-filter .title {
+    display: block;
     color: #fff;
     text-transform: uppercase;
     font-size: 24px;
     font-weight: bold;
-    margin: 20px;
+}
+
+#active-filter .title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#active-filter .title a:hover {
+    color: #999;
+    text-decoration: none;
+}
+
+#active-filter .subtitle {
+    display: block;
+    color: #999;
+    font-size: 14px;
 }
 
 /* Footer */
@@ -83,7 +111,7 @@ body {
 .clip {
     display: inline-block;
     width: 300px;
-    margin: 10px;
+    margin: 10px 10px 30px 10px;
     vertical-align: top;
 }
 
@@ -103,30 +131,71 @@ body {
     width: 300px;
 }
 
-.clip-trick {
+.clip-caption a {
+    text-decoration: none;
+}
+
+.clip-caption .clip-trick {
     display: block;
     font-size: 20px;
     font-weight: bold;
     color: #fff;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 8px;
     text-transform: uppercase;
 }
 
-.clip-skater {
+.clip-caption .clip-trick a {
     color: #fff;
+    text-decoration: none;
+}
+
+.clip-caption .clip-trick a:hover {
+    color: #999;
+}
+.clip-caption .clip-skater {
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.clip-caption .clip-skater a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.clip-caption .clip-skater a:hover {
+    color: #999;
+}
+
+.clip-caption .clip-filmer {
+    color: #aaa;
     display: block;
     font-size: 14px;
 }
 
-.clip-caption .clip-filmer {
-    display: block;
-    font-size: 14px;
+.clip-caption .clip-filmer a {
     color: #aaa;
+    text-decoration: none;
+}
+
+.clip-caption .clip-filmer a:hover {
+    color: #777;
+    text-decoration: none;
 }
 
 .clip-caption .clip-location {
     display: block;
-    font-size: 14px;
-    color: #666;
+    font-size: 11px;
+    color: #aaa;
+}
+
+.clip-caption .clip-location a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.clip-caption .clip-location a:hover {
+    color: #777;
+    text-decoration: none;
 }
