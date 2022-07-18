@@ -14,7 +14,6 @@ body {
 
 #navigation {
     display: block;
-    padding: 10px;
     background-color: #222;
     text-align: center;
 }
@@ -26,6 +25,7 @@ body {
     text-decoration: none;
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 #navigation .menu img {
@@ -69,11 +69,13 @@ body {
     color: #fff;
 }
 
-#active-filter {
-    margin: 20px;
+#navigation #active-filter {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #333;
 }
 
-#active-filter .title {
+#navigation #active-filter .title {
     display: block;
     color: #fff;
     text-transform: uppercase;
@@ -81,19 +83,19 @@ body {
     font-weight: bold;
 }
 
-#active-filter .title a {
+#navigation #active-filter .title a {
     color: #fff;
     text-decoration: none;
 }
 
-#active-filter .title a:hover {
+#navigation #active-filter .title a:hover {
     color: #999;
     text-decoration: none;
 }
 
-#active-filter .subtitle {
+#navigation #active-filter .subtitle {
     display: block;
-    color: #999;
+    color: #ccc;
     font-size: 14px;
 }
 
@@ -129,10 +131,6 @@ body {
 .clip-caption {
     display: block;
     width: 300px;
-}
-
-.clip-caption a {
-    text-decoration: none;
 }
 
 .clip-caption .clip-trick {
